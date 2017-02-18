@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <title>Employee Details</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">   
+    <link href="justified-nav.css" rel="stylesheet">    
+  </head>
+  
+  <body ng-controller="AddempCtrl">
+    <div class="container">
+      <div class="jumbotron" style="padding-bottom:0px;">
+        <h2>Add Employee Details</h2>
+      </div>
+	  <div>
+	  <table>
+	  <tr>
+		<td>Name</td>
+		<td>
+			<input type="text" ng-model="empname"><br>
+		</td>
+	  </tr>
+	  <tr>
+		<td>Mobile Number</td>
+		<td>
+			<input type="text" ng-model="mobilenumber"><br>
+		</td>
+	  </tr>
+	  <tr>
+		<td>Address</td>
+		<td>
+			<input type="text" ng-model="address"><br>
+		</td>
+	  </tr>
+	  
+	  <tr>
+		<td></td>
+		<td>
+			<button ng-click="add()">Add Details</button>
+		</td>	
+	  </tr>
+	  
+	  </table>
+	  
+	  <p>
+		<p>{{status}}</p>
+	  </p>
+	  <div>
+    </div>
+
+  </body>
+</html>

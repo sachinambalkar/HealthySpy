@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngMap">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">   
+    <link href="justified-nav.css" rel="stylesheet">    
+	
+	<title>Simle Map</title>
+	<meta name="description" content="Simple Map">
+	<meta name="keywords" content="ng-map,AngularJS,center">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script src="script-tags-for-development.js"></script>
+	
+	<script src = "https://maps.googleapis.com/maps/api/js"></script>
+<script src="/assets/gmap3.js?body=1" type="text/javascript"></script>
+<script>
+         function loadMap() {
+			
+            var mapOptions = {
+               center:new google.maps.LatLng(20.593684, 78.96288), zoom:12,
+               mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+				
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+         }
+      </script>
+
+  </head>
+  
+  
+  
+  <body ng-controller="EmpdetailsCtrl" onload = "loadMap()">
+    <div class="container">
+      <div class="jumbotron" style="padding-bottom:0px;">
+        <h2>Map Details</h2>
+      </div>
+	  <b>User selected</b>: {{selecteduser}}
+	  <br/>
+	  Location Details:
+	  <br/><br/>
+	  <div>
+		<ol>
+			<li ng-repeat="locationdetail in locationdetails">
+				{{locationdetail.$id}}
+			     <ol>
+					<li ng-repeat="(key, monthdetail) in locationdetail">
+						{{key}}
+						<ol>
+							<li ng-repeat="(key,daydetail) in monthdetail"> 
+									{{key}}
+									<ol>
+										<li ng-repeat="(key,times) in daydetail">
+											{{key}}
+											<ol>
+												<li ng-repeat="time in times">
+													{{time}}
+												</li>
+											</ol>
+										</li>
+									</ol>
+							</li>
+						</ol>
+					</li>
+				 </ol>
+			</li>
+		</ol>
+	  </div>
+    </div>
+	<br/>
+      <div id = "sample" style = "width:570px; height:580px;"></div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <title>Employee Details</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">   
+    <link href="justified-nav.css" rel="stylesheet">    
+  </head>
+  
+  <body ng-controller="EmpdetailsCtrl">
+    <div class="container">
+      <div class="jumbotron" style="padding-bottom:0px;">
+        <h2>Employees Details</h2>
+      </div>
+	  <div>
+	  
+			<table>
+				<tr>
+					<td> <b>Name</b></td>
+					<td><b>Mobile Number</b></td>
+					<td><b>Address</b></td>
+				</tr>
+			</table>			
+ 
+	<table>
+					<tr ng-repeat="item in alldata" ng-class-odd="'odd'" ng-class-even="'even'">						
+						<td height="40" >
+							<a ng-click="gotomap(item.$id)">{{item.name}}</a>
+						<td height="40" >{{item.$id}}</td>
+						<td height="40" >{{item.address}}</td>						
+					</tr>
+	 	</table>			
+	  
+	  
+	  <div>
+    </div>
+
+  </body>
+</html>
